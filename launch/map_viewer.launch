@@ -1,0 +1,5 @@
+<launch>
+    <node name="map_server" pkg="map_server" type="map_server" args="$(find second_project)/maps/map.yaml" />
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find second_project)/cfg/map_viewer.rviz"/>
+</launch>
