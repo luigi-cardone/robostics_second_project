@@ -1,4 +1,4 @@
-image: src/second_project/maps/map.pgm
+image: slam_map.pgm
 resolution: 0.050000
 origin: [-4.329860, -13.416845, 0.000000]
 negate: 0
