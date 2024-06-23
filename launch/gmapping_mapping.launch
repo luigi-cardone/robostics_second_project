@@ -29,5 +29,5 @@
     </node>
 
     <!-- Node to launch RViz with specific configuration -->
-    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find second_project)/cfg/mapping.rviz" />
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find second_project)/rviz/mapping.rviz" />
 </launch>
