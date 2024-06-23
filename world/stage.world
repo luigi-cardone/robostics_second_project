@@ -1,5 +1,5 @@
 include "models/map.inc"
-include "models/turtlebot.inc"
+include "models/scout_mini.inc"
 
 # configure the GUI window
 window
@@ -17,9 +17,9 @@ floorplan
 	size [31.25 18.20 3]
 )
 
-turtlebot
+scout_mini
 (
   pose [ 0 0 0 0]
-  name "turtlebot"
+  name "scout_mini"
   color "black"
 )
