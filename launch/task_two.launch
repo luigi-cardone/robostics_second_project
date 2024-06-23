@@ -16,6 +16,7 @@ kobuki_hexagons_kinect kobuki_hexagons_r200 roomba_circles_asus_xtion_pro roomba
   <param name="/use_sim_time" value="true"/>
 
 
+
  <!--  ***************** Robot simulation *****************  -->
   <node pkg="stage_ros" type="stageros" name="stageros" args="$(arg world_file)">
     <param name="base_watchdog_timeout" value="0.5"/>
@@ -58,17 +59,19 @@ kobuki_hexagons_kinect kobuki_hexagons_r200 roomba_circles_asus_xtion_pro roomba
     <param name="frame_id" value="map"/>
   </node>
 
-
-  <!--  ****** amcl *****  -->
- <include file="$(find second_project)/launch/amcl.launch.xml">
+<!-- AMCL (Adaptive Monte Carlo Localization) -->
+  <include file="$(find second_project)/launch/amcl.launch"> <!-- Line Changed -->
     <arg name="scan_topic" value="scan"/>
     <arg name="use_map_topic" value="true"/>
-    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/> <!-- Line 56: Corrected initial_pose_x argument -->
-    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/> <!-- Line 57: Corrected initial_pose_y argument -->
-    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/> <!-- Line 58: Corrected initial_pose_a argument -->
+    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
   </include>
 
+  <!-- Include Goal Publisher Launch File -->
+  <include file="$(find second_project)/launch/goal_publisher.launch"/> <!-- Line Added -->
 
-  <!--  **************** Visualisation ****************  -->
+  <!-- RViz Visualization -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find second_project)/rviz/robot_navigation.rviz"/>
 </launch>
+
