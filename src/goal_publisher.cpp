@@ -32,7 +32,7 @@ std::vector<std::tuple<double, double, double>> readGoalsFromCSV(const std::stri
     return goals;
 }
 
-void sendGoal(const MoveBaseClient& ac, const std::tuple<double, double, double>& goal) {
+void sendGoal(MoveBaseClient& ac, const std::tuple<double, double, double>& goal) {
     move_base_msgs::MoveBaseGoal goal_msg;
     double x = std::get<0>(goal);
     double y = std::get<1>(goal);

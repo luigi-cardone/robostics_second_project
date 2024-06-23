@@ -3,7 +3,7 @@
   <arg name="model" default="scout_mini"/>
 
   <!-- Load the URDF/Xacro file -->
-  <param name="robot_description" command="$(find xacro)/xacro '$(find robostics_second_project)/urdf/$(arg model).urdf.xacro'" />
+  <param name="robot_description" command="$(find xacro)/xacro '$(find second_project)/urdf/$(arg model).urdf.xacro'" />
 
   <!-- Publish the robot state -->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen">

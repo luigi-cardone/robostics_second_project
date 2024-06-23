@@ -45,6 +45,4 @@
     <origin xyz="0 0 ${base_height}"/>
   </joint>
 
-  <!-- Add other links and joints here -->
-
 </robot>
